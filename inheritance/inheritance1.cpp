@@ -12,8 +12,8 @@ class Person {
 	Person(const char * _name, int _age) : age(_age)
 	{
 		int len=strlen(_name);
-		this->name=new char[len];
-		strncpy(this->name, _name, len);
+		this->name=new char[len+1];
+		strcpy(this->name, _name);
 		cout<<"Person 생성자 실행.\n";
 	}
 
@@ -55,8 +55,8 @@ class Student : public Person {
 			: Person(_name, _age)
 		{
 				int len=strlen(_school);
-				this->school=new char[len];
-				strncpy(this->school, _school, len);
+				this->school=new char[len+1];
+				strcpy(this->school, _school);
 				cout<<"Student 생성자 실행.\n";
 		}
 		
