@@ -15,7 +15,7 @@ class Person {
 
 		Person(const char * _name, int _age) : age(_age)
 		{
-			strcpy(this->name, name);
+			strcpy(this->name, _name);
 			cout<<"생성자2 실행\n";
 		}
 
@@ -24,6 +24,11 @@ class Person {
 			strcpy(this->name, copy.name);
 			cout<<"복사 생성자 실행\n";
 		}
+
+		void Show(){
+			cout<<"name : "<<this->name<<endl;
+		}
+
 		
 }; //Person
 
@@ -31,7 +36,7 @@ int main(){
 
 	Person p1("name", 20);
 	Person p2=p1;
-
+	
 
 	return 0;
 }
