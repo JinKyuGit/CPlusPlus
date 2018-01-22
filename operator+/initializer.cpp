@@ -12,8 +12,7 @@ class A {
 			cout<<"A 기본 생성자 실행\n";
 		}
 
-		A(const A & copy){
-			this->num=copy.num;
+		A(const A & copy) : num(copy.num) {
 			cout<<"A 복사 생성자 실행\n";
 		}
 
