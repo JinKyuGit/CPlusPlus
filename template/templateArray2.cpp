@@ -5,25 +5,26 @@ using namespace std;
 //템플릿을 이용하여
 //배열처럼 다룰 수 있는 객체 만들기.
 
+template <class T>
 class Point{
 
-	int x;
-	int y;
+	T x;
+	T y;
 	
 	public :
-		Point(int _x=0, int _y=0) : x(_x), y(_y) { }
-		Point& operator= (const Point& p){
+		Point(T _x=0, T _y=0) : x(_x), y(_y) { }
+		Point& operator= (const Point<int>& p){
 			this->x=p.x;
 			this->y=p.y;
 
 			return *this;
 		}
 
-		friend ostream& operator<< (ostream& os, const Point& p);
+		friend ostream& operator<< (ostream& os, const Point<int>& p);
 
 }; //Point
 
-ostream& operator<< (ostream& os, const Point& p){
+ostream& operator<< (ostream& os, const Point<int>& p){
 
 	os<<"["<<p.x<<", "<<p.y<<"]"<<endl;
 	return os;
@@ -67,14 +68,14 @@ T& Array<T>:: operator[](int idx){
 int main(){
 	
 	Array<int> arr1(5);
-	Array<Point> arr2(5);
-	Array<Point *> arr3(5);
+	Array< Point<int> > arr2(5);
+	Array<Point<int> *> arr3(5);
 
 	int i;
 	for(i=0; i<5; i++){
 		arr1[i]=i;
-		arr2[i]=Point(i+1, i+2);
-		arr3[i]=new Point(i*2, i*3);
+		arr2[i]=Point<int>(i+1, i+2);
+		arr3[i]=new Point<int>(i*2, i*3);
 	}
 
 	for(i=0; i<5; i++){
