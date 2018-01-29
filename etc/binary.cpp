@@ -20,6 +20,24 @@ int Count(int num){
 }
 
 
+int Fourth(int num){
+
+	int i=1;
+	int result;
+
+	while(1){
+		if(i == 4){
+			break;
+		}
+
+		result=(num>>i)&1;
+		i++;
+	}
+	
+	return result;
+}
+
+
 int main(){
 
 	int num;
@@ -37,6 +55,7 @@ int main(){
 	}
 	cout<<endl;
 
+	cout<<Fourth(num)<<endl;
 
 	return 0;
 }
