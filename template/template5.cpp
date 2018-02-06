@@ -4,7 +4,7 @@ using namespace std;
 
 
 //일반 템플릿.
-template <class T=int>
+template <class T=int> //기본값을 int로.
 class Temp {
 
 	T num;
