@@ -44,7 +44,7 @@ void Point<double>:: Func(double num){
 }
 
 //상기 2개 함수는 기본형 템플릿에 종속적이나
-//아래 함수는 long형 특수화 템플릿에만 종속적이다.
+//아래 함수는 long형 특수화 템플릿클래스에만 종속적이다.
 //따라서 template<> 문구가 필요없다.
 void Point<long>:: Func(long num){
 	cout<<"Point<long> 실행\n";
